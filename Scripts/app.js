@@ -2,8 +2,9 @@
 
 // IIFE - Immediately Invoked Function Expression
 // anonymous self executing function
-(function () {
+let app = (function () {
     "use strict"
+
 
     // About Button Click event handler
     function AboutButtonClick() {
@@ -42,6 +43,30 @@
         let mySentence = "";
 
         paragraph.textContent = mySentence;
+
+        /*
+        let myArray = []; // means create an empty array container
+        myArray[0] = "Hello, World!"
+        myArray[1] = 5;
+        myArray[2] = true;
+        myArray.push("another element")*/
+        // let myArray = new Array(); // equivalent to let myArray = [];
+
+        let myArray = [
+            {name: "tom", age: 25},
+            {name: "bob", age: 35},
+            {name: "Mike", age: 45},
+            {name: "Juan", age: 55},
+            {name: "Smyth", age: 65}
+
+        ];
+
+        myArray.push(5);
+        myArray[20]="ok this is weird";
+
+        let content = document.getElementsByClassName("content");
+        console.log(myArray);
+        console.log("myArray length: " + myArray.length);
     }
 
     function Start() {
@@ -66,7 +91,13 @@
         }
     }
 
+
     //window.onload = Start;
 
     window.addEventListener("load", Start);
+
+    return {
+        title: document.title
+
+    };
 })();
